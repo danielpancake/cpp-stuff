@@ -29,20 +29,23 @@ double getTime(std::chrono::steady_clock::time_point start, std::chrono::steady_
 
 int main() {
     int N, t; std::cin >> N;
+    long long int result;
     std::chrono::steady_clock::time_point start, end;
 
     start = getNow();
-    std::cout << Fib(N) << " ";
+    result = Fib(N);
     end = getNow();
 
+    std::cout << result << " ";
     t = getTime(start, end);
 
     std::cout << "Iterative exec. time: " << t << "μs" << std::endl;
 
     start = getNow();
-    std::cout << FibRecursive(N) << " ";
+    result = FibRecursive(N);
     end = getNow();
 
+    std::cout << result << " ";
     t = getTime(start, end);
 
     std::cout << "Recursive exec. time: " << t << "μs" << std::endl;
